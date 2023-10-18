@@ -1,4 +1,3 @@
-
 import 'package:e_commerce/models/universal_response.dart';
 
 import '../../../models/product/product_model.dart';
@@ -60,9 +59,10 @@ class ProductRepo {
     return [];
   }
 
-
-  Future<List<ProductModel>> getProductsByCategory(String category,String sort) async {
-    UniversalResponse universalResponse = await apiProvider.getProductsByCategory(category: category,sort: sort);
+  Future<List<ProductModel>> getProductsByCategory(
+      String category, String sort) async {
+    UniversalResponse universalResponse =
+        await apiProvider.getProductsByCategory(category: category, sort: sort);
     if (universalResponse.error.isEmpty) {
       return universalResponse.data as List<ProductModel>;
     }

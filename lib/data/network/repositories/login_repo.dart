@@ -1,4 +1,3 @@
-
 import '../../../models/universal_response.dart';
 import '../../local/storage_repository.dart';
 import '../provider/api_provider.dart';
@@ -15,7 +14,8 @@ class LoginRepo {
     UniversalResponse universalResponse =
         await apiProvider.loginUser(username: username, password: password);
     if (universalResponse.error.isEmpty) {
-      await StorageRepository.putString("token", universalResponse.data as String);
+      await StorageRepository.putString(
+          "token", universalResponse.data as String);
       await StorageRepository.putString("username", username);
       await StorageRepository.putString("password", password);
       return true;

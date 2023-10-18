@@ -17,6 +17,7 @@ class UserRepo {
     }
     return [];
   }
+
   Future<List<UserModel>> getUsers() async {
     UniversalResponse universalResponse = await apiProvider.getAllUsers();
     if (universalResponse.error.isEmpty) {

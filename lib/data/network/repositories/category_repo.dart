@@ -1,3 +1,5 @@
+import 'package:flutter/cupertino.dart';
+
 import '../../../models/universal_response.dart';
 import '../provider/api_provider.dart';
 
@@ -11,7 +13,7 @@ class CategoryRepo {
     if (universalResponse.error.isEmpty) {
       return universalResponse.data as List<String>;
     }
-    print(universalResponse.error);
+    debugPrint(universalResponse.error);
     return [];
   }
 }

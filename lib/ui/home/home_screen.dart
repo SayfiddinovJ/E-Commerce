@@ -83,10 +83,10 @@ class _HomeScreenState extends State<HomeScreen> {
       isLoading = true;
     });
     users = await usersRepository.getAllUsers(username: userName, password: password);
-    print("PRODUCT FETCH FINISHED:${users.length}");
+    debugPrint("PRODUCT FETCH FINISHED:${users.length}");
 
     products = await productsRepository.getAllProducts();
-    print("PRODUCT FETCH FINISHED:${products.length}");
+    debugPrint("PRODUCT FETCH FINISHED:${products.length}");
     setState(() {
       isLoading = false;
     });
@@ -184,7 +184,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         setState(() {
                           selectMenu = item;
                         });
-                        print(selectMenu);
+                        debugPrint('$selectMenu');
                         if(selectMenu==1){
                           setState(() {
                             sort = 'ASC';
